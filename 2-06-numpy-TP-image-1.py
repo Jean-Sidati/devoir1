@@ -443,13 +443,19 @@ im3[:, :, 0]=im[:, :, 0]**(1/2)
 im3[:, :, 1]=im[:, :, 1]**(1/2)
 im3[:, :, 2]=im[:, :, 2]**(1/2)
 
-fig, axes = plt.subplots(1, 3)
+fig, axes = plt.subplots(3, 3)
 print(type(axes))
 print(axes.shape)
 
-axes[0].plot(plt.imshow(im1, cmap='gray'))
-axes[1].plot(plt.imshow(im2, cmap='gray'))
-axes[2].plot(plt.imshow(im3, cmap='gray'))
+axes[0, 0].imshow(im1)
+axes[0, 1].imshow(im2)
+axes[0, 2].imshow(im3)
+axes[1, 0].imshow(im3)
+axes[1, 1].imshow(im1)
+axes[1, 2].imshow(im2)
+axes[2, 0].imshow(im2)
+axes[2, 1].imshow(im3)
+axes[2, 2].imshow(im1)
 
 # %%
 
